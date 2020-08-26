@@ -12,10 +12,10 @@ var settings = sm.states.add(new State())
 var game = sm.states.add(new State())
 var deathscreen = sm.states.add(new State())
 
-sm.edges.add(new Edge(mainmenu.id,game.id))
-sm.edges.add(new Edge(mainmenu.id,settings.id))
-sm.edges.add(new Edge(game.id,deathscreen.id))
-sm.edges.add(new Edge(deathscreen.id,mainmenu.id))
+var mm2g = sm.edges.add(new Edge(mainmenu.id,game.id))
+var mm2set = sm.edges.add(new Edge(mainmenu.id,settings.id))
+var g2ds = sm.edges.add(new Edge(game.id,deathscreen.id))
+var ds2mm = sm.edges.add(new Edge(deathscreen.id,mainmenu.id))
 
 sm.currentstateid = mainmenu.id
 
